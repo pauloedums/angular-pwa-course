@@ -8,24 +8,16 @@ const bodyParser = require('body-parser');
 
 const webpush = require('web-push');
 
-
 const vapidKeys = {
-    publicKey: "TODO",
-    privateKey: "TODO"
+  "publicKey":"BNBTLvvBHfjCLZYuRMVruYzOYmNw-wZBNVjxck58msyB-W5qVPCVqb9Z0ixqaxrcRW_rHNA-RSDdE95RmZ7vacQ","privateKey":"mZrpZviXO-5GfOUOc6hRIPijZFSCcCoz6JUf9K8xoIg"
 };
 
-/*
-
-    TODO - uncomment after generating your VAPID keys
 
 webpush.setVapidDetails(
-    'mailto:example@yourdomain.org',
-    vapidKeys.publicKey,
-    vapidKeys.privateKey
+  'mailto:example@yourdomain.org',
+  vapidKeys.publicKey,
+  vapidKeys.privateKey
 );
-
-*/
-
 
 const app: Application = express();
 
@@ -40,8 +32,9 @@ app.route('/api/lessons')
 app.route('/api/notifications')
     .post(addPushSubscriber);
 
-app.route('/api/newsletter')
+    app.route('/api/newsletter')
     .post(sendNewsletter);
+
 
 
 
